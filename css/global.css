@@ -1,7 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap');
+
+:root {
+    --cor-1: #3d5a84;
+    --cor-2: #4880c1;
+    --cor-3: #fff;
+
+    --mesa-livre: chocolate;
+    --mesa-block: gray;
+    --mesa-parcial: green;
+}
 
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
@@ -38,14 +48,14 @@ body {
 }
 
 .livre {
-    background-color: chocolate;
+    background-color: var(--mesa-livre);
     padding: 5px;
     border-radius: 50%;
     color: #fff;
 }
 
 .block {
-    background-color: gray;
+    background-color: var(--mesa-block);
     padding: 5px;
     border-radius: 50%;
     color: #fff;
@@ -53,7 +63,7 @@ body {
 }
 
 .parcial {
-    background-color: green;
+    background-color: var(--mesa-parcial);
     padding: 5px;
     border-radius: 50%;
     color: #fff;
