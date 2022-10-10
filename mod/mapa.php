@@ -20,7 +20,7 @@ if($res=mysqli_query($conn, $select)){
             }elseif($reg['status'] == 'livre'){
                 echo '<div class="item"><a class="'. $reg['status'] .'" href="registro?secao='. $reg['secao'] . '&mesa=' . $reg['mesa'] .'&status='. $reg['status'] .'&id='. $reg['id'] .'">' . $reg['secao'] . $reg['mesa'] . '</a></div>';
             }elseif($reg['status'] == 'hidden'){
-                echo '<div class="item"><span class="'. $reg['status'] .'">' . $reg['secao'] . $reg['mesa'] . '</span></div>';
+                echo '<div class="item"><span class="'. $reg['status'] .'"></span></div>';
             }elseif($reg['status'] == 'parcial'){
                 echo '<div class="item"><a class="'. $reg['status'] .'" href="registro?secao='. $reg['secao'] . '&mesa=' . $reg['mesa'] .'&status='. $reg['status'] .'&id='. $reg['id'] .'">' . $reg['secao'] . $reg['mesa'] . '</a></div>';
             }

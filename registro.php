@@ -1,14 +1,14 @@
 <?php
 
-include './config.php';
+    include './config.php';
 
-if(!isset($_GET['secao'])){
-    header('location: ./');
-}
+    if(!isset($_GET['secao'])){
+        header('location: ./');
+    }
 
-if(!isset($_GET['mesa'])){
-    header('location: ./');
-}
+    if(!isset($_GET['mesa'])){
+        header('location: ./');
+    }
 
     $_GET['secao'];
     $_GET['mesa'];
@@ -31,8 +31,8 @@ if(!isset($_GET['mesa'])){
             $quant = 10;
         }
         
-        $secao = $_POST['secao'];
-        $mesa = $_POST['mesa'];
+        $secao = $secao;
+        $mesa = $mesa;
         $type = $_POST['type'];
         
         $nome = $_POST['nome'];
@@ -118,6 +118,7 @@ if(!isset($_GET['mesa'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/lp.css">
     <script src="./js/form.js"></script>
 </head>
 <body>
@@ -125,14 +126,16 @@ if(!isset($_GET['mesa'])){
 <!-- Caso tenha um alert js a mensagem aparece no "<p>" abaixo -->
 <!-- <p id="demo"></p> -->
 
+<div class="container">
+
     <h1>Reserva de Mesa | Seção <?php echo $secao; ?> - Mesa <?php echo $mesa; ?></h1>
 
     <form action="" method="post">
-        <label for="secao">Seção</label>
+        <!-- <label for="secao">Seção</label>
         <input type="text" id="secao" name="secao" value="<?php echo $secao; ?>">
 
         <label for="mesa">Mesa</label>
-        <input type="text" id="mesa" name="mesa" value="<?php echo $mesa; ?>">
+        <input type="text" id="mesa" name="mesa" value="<?php echo $mesa; ?>"> -->
         <?php
             if(isset($status)){
                 if($status == 'parcial'){
@@ -153,31 +156,33 @@ if(!isset($_GET['mesa'])){
             }
         ?>
 
-        <h3>Dados de faturamento</h3>
+        <h2>Dados de faturamento</h2>
         <select name="type" id="type" onChange="update()">
             <option value="">Selecione para seguir</option>
             <option value="CPF">Pessoa Física</option>
             <option value="CNPJ">Pessoa Juridica</option>
         </select>
-        <input type="text" id="cpf" name="cpf" placeholder="cpf" required>
+        <input type="number" id="cpf" name="cpf" placeholder="cpf" required>
         <input type="text" id="nome" name="nome" placeholder="nome" required>
         <input type="email" id="email" name="email" placeholder="email" required>
         <input type="text" id="empresa" name="empresa" placeholder="empresa" required>
-        <input type="text" id="endereco" name="endereco" placeholder="endereco" required>
-        <input type="text" id="tel" name="tel" placeholder="telefone" required>
-        <input type="text" id="observacoes" name="obs" placeholder="observacoes" required>
+        <textarea id="endereco" name="endereco" rows="2" placeholder="Endereço" required></textarea>
+        <input type="number" id="tel" name="tel" placeholder="telefone" required>
         <select name="pag" id="pag" required>
             <option value="">Selecione a forma de pagamento</option>
             <option value="pix">Pix</option>
             <option value="cartao">Cartão</option>
             <option value="boleto">Boleto</option>
         </select>
+        <textarea id="observacoes" name="obs" rows="2" placeholder="Observações de pagamento" required></textarea>
 
         <!-- Se for necessário exibir um alerta antes de enviar o formulário, basta inserir [onclick="alert()"] no input de submit abaixo -->
         
         <input type="submit" name="submit" value="Enviar Reserva">
     </form>
-    <a href="./">Cancelar</a>
+    <a class="cancelar" href="./">Cancelar</a>
+
+</div>
 
     <script>update();</script>
 </body>

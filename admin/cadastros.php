@@ -22,7 +22,7 @@ if($result){
 
     ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,20 +31,16 @@ if($result){
     <link rel="stylesheet" href="../css/global.css">
 </head>
 <body>
-
-    <table border="1">
-        <tr>
-            <td>Id</td>
+<div class="table">
+    <table>
+        <tr class="topo">
             <td>Mesa</td>
             <td>Nome</td>
             <td>E-mail</td>
             <td>Empresa</td>
-            <td>Identificação</td>
-            <td>Endereço</td>
             <td>Telefone</td>
             <td>Cadeiras</td>
             <td>Pagamento</td>
-            <td>Observações</td>
             <td>Metodo de pagamento</td>
             <td colspan="2">Ação</td>
         </tr>
@@ -77,17 +73,13 @@ if($result){
     ?>
     
         <tr>
-            <td><?php echo $id[$i]; ?></td>
             <td><?php echo $mesa . $num; ?></td>
             <td><?php echo $nome[$i]; ?></td>
             <td><?php echo $email[$i]; ?></td>
             <td><?php echo $empresa[$i]; ?></td>
-            <td><?php echo $cpf_cnpj[$i]; ?></td>
-            <td><?php echo $endereco[$i]; ?></td>
             <td><?php echo $telefone[$i]; ?></td>
             <td><?php echo $quant_participante[$i]; ?></td>
             <td><?php echo $status_pag[$i]; ?></td>
-            <td><?php echo $observacoes_pag[$i]; ?></td>
             <td><?php echo $method_pag[$i]; ?></td>
             <td><a href="./add_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>&num=<?php echo $quant_participante[$i]; ?>">Adicionar</a></td>
             <td><a href="./listar_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>">Ver</a></td>
@@ -97,6 +89,7 @@ if($result){
 }
 ?>
     </table>
+</div>
 
 </body>
 </html>
