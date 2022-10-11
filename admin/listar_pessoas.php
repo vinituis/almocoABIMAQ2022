@@ -5,7 +5,7 @@ include '../config.php';
 $ref_cad = $_GET['id_cad'];
 $mesa = $_GET['mesa'];
 
-$select = "SELECT * FROM pessoas WHERE ref_cad = '$ref_cad' && ref_mesa = '$mesa' ORDER BY pessoas.cadeira ASC";
+$select = "SELECT * FROM pessoas WHERE ref_cad = '$ref_cad' && ref_mesa = '$mesa' ORDER BY pessoas.id ASC";
 $result = mysqli_query($conn, $select);
 
 ?>

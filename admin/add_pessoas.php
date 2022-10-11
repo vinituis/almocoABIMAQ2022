@@ -6,22 +6,29 @@ include '../config.php';
 if(isset($_GET['mesa'])){
     $mesa = $_GET['mesa'];
     $Ncad = $_GET['num'] + 1;
+    $cad_num = $_GET['num'];
     $ref_cad = $_GET['id_cad'];
 }
 
+$sql = "SELECT * FROM pessoas WHERE ref_mesa = '$mesa' && ref_cad = '$ref_cad' ORDER BY pessoas.id ASC";
+$result = mysqli_query($conn, $sql);
+
 if(isset($_POST['user'])){
+    $sql = "SELECT * FROM pessoas WHERE ref_mesa = '$mesa' && ref_cad = '$ref_cad' ORDER BY pessoas.id ASC";
+    $result = mysqli_query($conn, $sql);
+
     $cadeira = $_POST['cad'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $empresa = $_POST['empresa'];
 
-    $sql = "SELECT * FROM pessoas WHERE cadeira = '$cadeira' && ref_mesa = '$mesa'";
+    $sql = "SELECT * FROM pessoas WHERE cadeira = '$cadeira' && ref_mesa = '$mesa' && ref_cad = '$ref_cad'";
     $res = mysqli_query($conn, $sql);
 
     var_dump($res);
     if(mysqli_num_rows($res) >= 1){
         $reg = mysqli_fetch_assoc($res);
-        echo $reg['ref_mesa'];
+        echo 'este cadastro já existe';
     }else{
         $insert = "INSERT INTO pessoas (ref_cad, ref_mesa, nome, email, empresa, cadeira) VALUES ('$ref_cad', '$mesa', '$nome', '$email', '$empresa', '$cadeira')";
         var_dump($insert);
@@ -45,11 +52,15 @@ if(isset($_POST['user'])){
 </head>
 <body>
     <div class="participantes">
+        <?php
+            if(mysqli_num_rows($result) < $cad_num){
+                $nRows = mysqli_num_rows($result);
+        ?>
         <form action="" method="POST">
             <select name="cad" id="cad" onChange="update_adm()">
-                <option value="null">Selecione a cadeira</option>
-                <?php for($x = 1; $x < $Ncad; $x++){ ?>
-                    <option value="<?php echo $x; ?>">Cadeira <?php echo $x; ?></option>
+                <option value="null">Participantes</option>
+                <?php for($x = ($nRows + 1); $x < ($cad_num + 1); $x++){ ?>
+                    <option value="<?php echo $x; ?>"><?php echo $x; ?>º Convidado</option>
                 <?php } ?>
             </select>
 
@@ -58,6 +69,43 @@ if(isset($_POST['user'])){
             <input type="empresa" name="empresa" id="empresa" placeholder="Insira a empresa" required>
             <input type="submit" name="user">
         </form>
+
+        <?php 
+            }else{
+                echo 'Número de convidados atingido';
+            } ?>
+
+        <a href="./cadastros.php">Voltar</a>
+        <div class="table">
+            <table>
+                <tr class="topo">
+                    <td>Participante</td>
+                    <td>Nome</td>
+                    <td>E-mail</td>
+                    <td>Empresa</td>
+                    <td>Ação</td>
+                </tr>
+
+                <?php
+
+                    if(mysqli_num_rows($result) >= 1){
+                        while ($reg = mysqli_fetch_assoc($result)){
+                ?>
+
+                    <tr>
+                        <td><?php echo $reg['cadeira']; ?></td>
+                        <td><?php echo $reg['nome']; ?></td>
+                        <td><?php echo $reg['email']; ?></td>
+                        <td><?php echo $reg['empresa']; ?></td>
+                        <td></td>
+                    </tr>
+
+                <?php
+                        }
+                    }
+                ?>
+            </table>
+        </div>
 
     </div>
 

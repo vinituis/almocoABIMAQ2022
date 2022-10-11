@@ -2,7 +2,7 @@
 
 include '../config.php';
 
-$select = "SELECT * FROM cadastros";
+$select = "SELECT * FROM cadastros ORDER BY cadastros.id ASC";
 $result = mysqli_query($conn, $select);
 
 if($result){
@@ -70,6 +70,7 @@ if($result){
         $mesa = $row[1];
         $num = $row[2];
 
+        if($status_pag[$i] == 'cancelado'){}else{
     ?>
     
         <tr>
@@ -85,7 +86,7 @@ if($result){
             <td><a href="./listar_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>">Ver</a></td>
         </tr>
         <?php
-    }
+    }}
 }
 ?>
     </table>

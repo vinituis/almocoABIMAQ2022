@@ -7,9 +7,9 @@
 
     --image: url('../img/estrutura.png');
 
-    --mesa-livre: chocolate;
-    --mesa-block: gray;
-    --mesa-parcial: green;
+    --mesa-livre: green;
+    --mesa-block: #696969;
+    --mesa-parcial: var(--cor-2);
 }
 
 * {
