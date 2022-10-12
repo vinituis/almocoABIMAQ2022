@@ -10,29 +10,34 @@ if(isset($_GET['mesa'])){
     $ref_cad = $_GET['id_cad'];
 }
 
+// seleciono as pessoas vinculadas ao cadastro
 $sql = "SELECT * FROM pessoas WHERE ref_mesa = '$mesa' && ref_cad = '$ref_cad' ORDER BY pessoas.id ASC";
 $result = mysqli_query($conn, $sql);
 
+// se tiver envio eu seleciono as pessoas vinculadas ao cadastro
 if(isset($_POST['user'])){
     $sql = "SELECT * FROM pessoas WHERE ref_mesa = '$mesa' && ref_cad = '$ref_cad' ORDER BY pessoas.id ASC";
     $result = mysqli_query($conn, $sql);
 
+    // pego as informações enviadas
     $cadeira = $_POST['cad'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $empresa = $_POST['empresa'];
 
+    // seleciono as pessoas vinculadas a cadeira, mesa e cadastro
     $sql = "SELECT * FROM pessoas WHERE cadeira = '$cadeira' && ref_mesa = '$mesa' && ref_cad = '$ref_cad'";
     $res = mysqli_query($conn, $sql);
 
-    var_dump($res);
+    // se tiver resultado na consulta acima eu retorno um aviso falando que já existe a pessoa
     if(mysqli_num_rows($res) >= 1){
         $reg = mysqli_fetch_assoc($res);
-        echo 'este cadastro já existe';
+        echo '<span class="aviso">Este cadastro já existe</span>';
     }else{
+        // se a resposta for 0 insere no banco e recarrega a página para atualizar a tabela
         $insert = "INSERT INTO pessoas (ref_cad, ref_mesa, nome, email, empresa, cadeira) VALUES ('$ref_cad', '$mesa', '$nome', '$email', '$empresa', '$cadeira')";
-        var_dump($insert);
         mysqli_query($conn, $insert);
+        header('refresh: 0');
     } 
 
     
@@ -48,18 +53,24 @@ if(isset($_POST['user'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/global.css">
+    <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
     <script src="../js/form.js"></script>
 </head>
 <body>
-    <div class="participantes">
+    <div class="container">
         <?php
+            // se o número de linhas no banco for menor que o número de cadastros
             if(mysqli_num_rows($result) < $cad_num){
+                // defino que $nRows vai receber o número de linhas do banco
                 $nRows = mysqli_num_rows($result);
         ?>
         <form action="" method="POST">
             <select name="cad" id="cad" onChange="update_adm()">
                 <option value="null">Participantes</option>
-                <?php for($x = ($nRows + 1); $x < ($cad_num + 1); $x++){ ?>
+                <?php
+                    // repito quantas vezes faltam para o número de pessoas atingir o máximo do cadastro 
+                    for($x = ($nRows + 1); $x < ($cad_num + 1); $x++){ 
+                ?>
                     <option value="<?php echo $x; ?>"><?php echo $x; ?>º Convidado</option>
                 <?php } ?>
             </select>
@@ -72,10 +83,11 @@ if(isset($_POST['user'])){
 
         <?php 
             }else{
-                echo 'Número de convidados atingido';
+                // se o número de linhas no banco for maior que o número de cadastros retorna um aviso
+                echo '<span class="aviso">Número de convidados atingido</span>';
             } ?>
 
-        <a href="./cadastros.php">Voltar</a>
+        <a href="./cadastros.php" class="btn voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
         <div class="table">
             <table>
                 <tr class="topo">
@@ -87,7 +99,7 @@ if(isset($_POST['user'])){
                 </tr>
 
                 <?php
-
+                    // repetição da tabela dos participantes cadastrados
                     if(mysqli_num_rows($result) >= 1){
                         while ($reg = mysqli_fetch_assoc($result)){
                 ?>

@@ -262,3 +262,21 @@ body {
     padding: 1rem 2rem;
     color: var(--cor-1);
 }
+
+.container form {
+    width: 100%;
+}
+
+.container form input,
+.container form select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+span.aviso {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--amarelo);
+    text-align: center;
+    color: var(--cor-1);
+}
