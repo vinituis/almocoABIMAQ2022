@@ -280,3 +280,8 @@ span.aviso {
     text-align: center;
     color: var(--cor-1);
 }
+
+.header.adm {
+    background-image: none;
+    height: 3rem;
+}

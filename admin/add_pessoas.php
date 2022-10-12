@@ -57,6 +57,11 @@ if(isset($_POST['user'])){
     <script src="../js/form.js"></script>
 </head>
 <body>
+
+<?php
+    include './mod/menu.php';
+?>
+
     <div class="container">
         <?php
             // se o número de linhas no banco for menor que o número de cadastros

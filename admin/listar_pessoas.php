@@ -21,6 +21,11 @@ $result = mysqli_query($conn, $select);
     <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
+
+<?php
+    include './mod/menu.php';
+?>
+
     <h2>Dados do Comprador</h2>
     <div class="dados">
             <?php 

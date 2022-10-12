@@ -31,6 +31,11 @@ if($result){
     <link rel="stylesheet" href="../css/global.css">
 </head>
 <body>
+
+<?php
+    include './mod/menu.php';
+?>
+
 <div class="table">
     <table>
         <tr class="topo">

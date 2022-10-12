@@ -28,7 +28,6 @@ if(isset($_SESSION['logado'])){
     <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
-    
     <form action="./mod/valida.php" method="post">
         <img src="./images/logo.png" alt="">
         <h2>Acesse a transmissão</h2>
