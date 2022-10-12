@@ -1,6 +1,7 @@
 <?php
 
     include './config.php';
+    include './mod/emails.php';
 
     if(!isset($_GET['secao'])){
         header('location: ./');
@@ -24,6 +25,7 @@
         header('location: ./');
     }
 
+    // se existir o envio subo no banco e notifico o nelson 
     if(isset($_POST['submit'])){
         if(isset($_POST['quant'])){
             $quant = $_POST['quant'];
@@ -44,69 +46,32 @@
         $obs = $_POST['obs'];
         $pag = $_POST['pag'];
 
-        $insert = "INSERT INTO cadastros(ref_mesa, nome, email, empresa, cpf_cnpj, endereco, telefone, quant_participante, observacoes_pag, method_pag) VALUES ('$id_mesa', '$nome', '$email', '$empresa', '$cpf', '$endereco', '$tel', '$quant', '$obs', '$pag')";
-        mysqli_query($conn, $insert);
+        echo $arq;
 
-        if(isset($insert)){
-            date_default_timezone_set('America/Sao_Paulo');
-            $hora_envio = date('H:i:s');
-            $data_envio = date('d/m/Y');
-            $arq = '
-            <!DOCTYPE html>
-            <html lang="pt-br">
-            <head>
-                <meta charset="UTF-8">
-                <title>E-mail</title>
-                <style type="text/css">
-                    body {
-                    margin:0;
-                    font-family: Verdana, sans-serif;
-                    font-size: 12px;
-                    color: #000;
-                    }
-                    p {
-                    font-size: 12px;
-                    }
-                </style>
+        // $insert = "INSERT INTO cadastros(ref_mesa, nome, email, empresa, cpf_cnpj, endereco, telefone, quant_participante, observacoes_pag, method_pag) VALUES ('$id_mesa', '$nome', '$email', '$empresa', '$cpf', '$endereco', '$tel', '$quant', '$obs', '$pag')";
+        // mysqli_query($conn, $insert);
 
-            </head>
-            <body>
-                <div>
-                    <h1>Inscrição realizada</h1>
-                    <p><b>Seção: </b>$secao</p>
-                    <p><b>Mesa: </b>$mesa</p>
-                    <p><b>Lugares: </b>$quant</p>
-
-                    <p><b>Tipo: </b>$type</p>
-                    <p><b>CPF/CNPJ: </b>$cpf</p>
-                    <p><b>Pagamento: </b>$pag</p>
-                    <p><b>Observações de Pagamento: </b>$obs</p>
-                    <p><b>Nome: </b>$nome</p>
-                    <p><b>E-mail: </b>$email</p>
-                    <p><b>Empresa: </b>$empresa</p>
-                    <p><b>Endereço: </b>$endereco</p>
-                    <p><b>Telefone: </b>$tel</p>
-                    <p>Enviado em $data_envio às $hora_envio </p>
-                </div>
-            </body>
-            </html>
-            ';
-            $emailenviar = 'eventos@abimaq.org.br';
-            $destino = 'eventos@abimaq.org.br';
-            $assunto = 'Confirmação de Mesa | Almoço 2022 ';
+        // if(isset($insert)){
+        //     date_default_timezone_set('America/Sao_Paulo');
+        //     $hora_envio = date('H:i:s');
+        //     $data_envio = date('d/m/Y');
+        //     $arq = $arq;
+        //     $emailenviar = 'eventos@abimaq.org.br';
+        //     $destino = 'eventos@abimaq.org.br';
+        //     $assunto = 'Confirmação de Mesa | Almoço 2022 ';
         
-            $headers = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= 'From: Eventos ABIMAQ <$email>';
+        //     $headers = 'MIME-Version: 1.0' . "\r\n";
+        //     $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
+        //     $headers .= 'From: Eventos ABIMAQ <$email>';
         
-            $enviaremail = mail($destino, $assunto, $arq, $headers);
+        //     $enviaremail = mail($destino, $assunto, $arq, $headers);
         
-            if($enviaremail){
-                echo "foi";
-            }else{
-                echo "deu erro ao enviar";
-            }
-        }
+        //     if($enviaremail){
+        //         echo "foi";
+        //     }else{
+        //         echo "deu erro ao enviar";
+        //     }
+        // }
     }
 ?>
 
@@ -131,30 +96,43 @@
     <h1>Reserva de Mesa | Seção <?php echo $secao; ?> - Mesa <?php echo $mesa; ?></h1>
 
     <form action="" method="post">
-        <!-- <label for="secao">Seção</label>
-        <input type="text" id="secao" name="secao" value="<?php echo $secao; ?>">
-
-        <label for="mesa">Mesa</label>
-        <input type="text" id="mesa" name="mesa" value="<?php echo $mesa; ?>"> -->
         <?php
+            // seleciono os cadastros que já existem na mesa 
+            $sql = "SELECT * FROM cadastros WHERE ref_mesa = '$id_mesa'";
+            $res = mysqli_query($conn, $sql);
+            $quant = 0;
+            // verifico se existe cadastros nessa mesa e conto a quantidade de participantes
+            if(mysqli_num_rows($res) >= 1){
+                while ($reg = mysqli_fetch_assoc($res)){
+                    $Nparticipante = $reg['quant_participante'];
+                    $statusPag = $reg['status_pag'];
+                    if($statusPag == 'cancelado'){}else{
+                        $quant = $quant + $Nparticipante;
+                    }
+                }
+                // verifico se a quantidade de participantes é igual ou maior que 10 que é o número máximo de cadeiras por mesa, e se for maior eu bloqueio a mesa 
+                if($quant >= 10){
+                    $update = "UPDATE mesas SET status = 'block' WHERE id = '$id_mesa'";
+                    mysqli_query($conn, $update);
+                }
+            }
+            // verifico se o status é de mesa individual, se sim exibo as quantidades disponiveis de lugares
             if(isset($status)){
                 if($status == 'parcial'){
-                    echo '
+                    ?>
                     <select name="quant" id="quant" required>
                         <option value="">Selecione a Quantidade</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>';
+                    <?php
+                    // repito a quantidade de lugares vagos
+                    for($x = 1; $x <= (10 - $quant); $x++){
+                        ?>
+                        <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+                        <?php
+                    }
                 }
             }
         ?>
+                    </select>
 
         <h2>Dados de faturamento</h2>
         <select name="type" id="type" onChange="update()">
