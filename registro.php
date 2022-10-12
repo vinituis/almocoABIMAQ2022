@@ -1,7 +1,6 @@
 <?php
 
     include './config.php';
-    include './mod/emails.php';
 
     if(!isset($_GET['secao'])){
         header('location: ./');
@@ -46,8 +45,6 @@
         $obs = $_POST['obs'];
         $pag = $_POST['pag'];
 
-        echo $arq;
-
         $insert = "INSERT INTO cadastros(ref_mesa, nome, email, empresa, cpf_cnpj, endereco, telefone, quant_participante, observacoes_pag, method_pag) VALUES ('$id_mesa', '$nome', '$email', '$empresa', '$cpf', '$endereco', '$tel', '$quant', '$obs', '$pag')";
         mysqli_query($conn, $insert);
 
@@ -55,7 +52,45 @@
             date_default_timezone_set('America/Sao_Paulo');
             $hora_envio = date('H:i:s');
             $data_envio = date('d/m/Y');
-            $arq = $Enotifica;
+            $arq = '
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <title>E-mail</title>
+                <style type="text/css">
+                    body {
+                    margin:0;
+                    font-family: Verdana, sans-serif;
+                    font-size: 12px;
+                    color: #000;
+                    }
+                    p {
+                    font-size: 12px;
+                    }
+                </style>
+
+            </head>
+            <body>
+                <div>
+                    <h1>Inscrição realizada</h1>
+                    <p><b>Seção: </b>'.$secao.'</p>
+                    <p><b>Mesa: </b>'.$mesa.'</p>
+                    <p><b>Lugares: </b>'.$quant.'</p>
+
+                    <p><b>Tipo: </b>'.$type.'</p>
+                    <p><b>CPF/CNPJ: </b>'.$cpf.'</p>
+                    <p><b>Pagamento: </b>'.$pag.'</p>
+                    <p><b>Observações de Pagamento: </b>'.$obs.'</p>
+                    <p><b>Nome: </b>'.$nome.'</p>
+                    <p><b>E-mail: </b>'.$email.'</p>
+                    <p><b>Empresa: </b>'.$empresa.'</p>
+                    <p><b>Endereço: </b>'.$endereco.'</p>
+                    <p><b>Telefone: </b>'.$tel.'</p>
+                    <p>Enviado em '.$data_envio.' às '.$hora_envio.' </p>
+                </div>
+            </body>
+            </html>';
             $emailenviar = 'eventos@abimaq.org.br';
             $destino = 'eventos@abimaq.org.br';
             $assunto = 'Confirmação de Mesa | Almoço 2022 ';

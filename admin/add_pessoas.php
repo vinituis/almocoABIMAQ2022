@@ -3,11 +3,32 @@
 include '../config.php';
 
 
-if(isset($_GET['mesa'])){
-    $mesa = $_GET['mesa'];
-    $Ncad = $_GET['num'] + 1;
-    $cad_num = $_GET['num'];
+if(isset($_GET['id_cad'])){
     $ref_cad = $_GET['id_cad'];
+    if(isset($_GET['mesa'])){
+        $mesa = $_GET['mesa'];
+    }else{
+        // se não vier a mesa no cadastro, verifico o id de referencia do cadastro
+        $cad = "SELECT * FROM cadastros WHERE id = '$ref_cad' ORDER BY cadastros.status_pag DESC";
+        $resCad = mysqli_query($conn, $cad);
+        //capturo a referencia da mesa
+        $it = mysqli_fetch_assoc($resCad);
+        $ref_mesa = $it['ref_mesa'];
+
+        // verifico a seção e o número da mesa e retorno na variavel $mesa
+        $mesaCad = "SELECT * FROM mesas WHERE id = '$ref_mesa'";
+        $resMesa = mysqli_query($conn, $mesaCad);
+        $row = mysqli_fetch_row($resMesa);
+        $secao = $row[1];
+        $num = $row[2];
+        $mesa = $secao . $num;
+    }
+    if(isset($_GET['num'])){
+        $Ncad = $_GET['num'] + 1;
+        $cad_num = $_GET['num'];
+    }
+}else{
+    header('location: ./');
 }
 
 // seleciono as pessoas vinculadas ao cadastro
@@ -59,7 +80,7 @@ if(isset($_POST['user'])){
 <body>
 
 <?php
-    include './mod/menu.php';
+    // include './mod/menu.php';
 ?>
 
     <div class="container">

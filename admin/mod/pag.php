@@ -2,8 +2,6 @@
 
 include "../../config.php";
 
-include "../../mod/emails.php";
-
 $pag = $_GET['status'];
 $id = $_GET['id'];
 
@@ -12,6 +10,8 @@ $res = mysqli_query($conn, $sql);
 if(mysqli_num_rows($res) >= 1){
     while ($data = mysqli_fetch_assoc($res)){
         $email = $data['email'];
+        $ref_cad = $data['id'];
+        $quant = $data['quant_participante'];
     }
 }
 
@@ -25,12 +25,35 @@ if(isset($_GET['status'])){
                 date_default_timezone_set('America/Sao_Paulo');
                 $hora_envio = date('H:i:s');
                 $data_envio = date('d/m/Y');
-                $arq = $Epag;
+                $arq = '
+                <!DOCTYPE html>
+                <html lang="pt-br">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>E-mail</title>
+                    <style type="text/css">
+                        body {
+                        margin:0;
+                        font-family: Verdana, sans-serif;
+                        font-size: 12px;
+                        color: #000;
+                        }
+                        p {
+                        font-size: 12px;
+                        }
+                    </style>
+    
+                </head>
+                <body>
+                    <div>
+                        <h1>Inscrição realizada</h1>
+                        <a href="http://localhost/almocoABIMAQ2022/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'">Link</a>
+                    </div>
+                </body>
+                </html>';
                 $emailenviar = 'eventos@abimaq.org.br';
                 $destino = $email;
                 $assunto = 'Pagamento realizado';
-
-                echo $assunto;
             
                 $headers = 'MIME-Version: 1.0' . "\r\n";
                 $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
@@ -47,7 +70,31 @@ if(isset($_GET['status'])){
                 date_default_timezone_set('America/Sao_Paulo');
                 $hora_envio = date('H:i:s');
                 $data_envio = date('d/m/Y');
-                $arq = $Ecancel;
+                $arq = '
+                <!DOCTYPE html>
+                <html lang="pt-br">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>E-mail</title>
+                    <style type="text/css">
+                        body {
+                        margin:0;
+                        font-family: Verdana, sans-serif;
+                        font-size: 12px;
+                        color: #000;
+                        }
+                        p {
+                        font-size: 12px;
+                        }
+                    </style>
+    
+                </head>
+                <body>
+                    <div>
+                        <h1>Cancelamento realizado</h1>
+                    </div>
+                </body>
+                </html>';
                 $emailenviar = 'eventos@abimaq.org.br';
                 $destino = $email;
                 $assunto = 'Inscrição cancelada';
