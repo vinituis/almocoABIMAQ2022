@@ -48,30 +48,30 @@
 
         echo $arq;
 
-        // $insert = "INSERT INTO cadastros(ref_mesa, nome, email, empresa, cpf_cnpj, endereco, telefone, quant_participante, observacoes_pag, method_pag) VALUES ('$id_mesa', '$nome', '$email', '$empresa', '$cpf', '$endereco', '$tel', '$quant', '$obs', '$pag')";
-        // mysqli_query($conn, $insert);
+        $insert = "INSERT INTO cadastros(ref_mesa, nome, email, empresa, cpf_cnpj, endereco, telefone, quant_participante, observacoes_pag, method_pag) VALUES ('$id_mesa', '$nome', '$email', '$empresa', '$cpf', '$endereco', '$tel', '$quant', '$obs', '$pag')";
+        mysqli_query($conn, $insert);
 
-        // if(isset($insert)){
-        //     date_default_timezone_set('America/Sao_Paulo');
-        //     $hora_envio = date('H:i:s');
-        //     $data_envio = date('d/m/Y');
-        //     $arq = $arq;
-        //     $emailenviar = 'eventos@abimaq.org.br';
-        //     $destino = 'eventos@abimaq.org.br';
-        //     $assunto = 'Confirmação de Mesa | Almoço 2022 ';
+        if(isset($insert)){
+            date_default_timezone_set('America/Sao_Paulo');
+            $hora_envio = date('H:i:s');
+            $data_envio = date('d/m/Y');
+            $arq = $Enotifica;
+            $emailenviar = 'eventos@abimaq.org.br';
+            $destino = 'eventos@abimaq.org.br';
+            $assunto = 'Confirmação de Mesa | Almoço 2022 ';
         
-        //     $headers = 'MIME-Version: 1.0' . "\r\n";
-        //     $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
-        //     $headers .= 'From: Eventos ABIMAQ <$email>';
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= 'From: Eventos ABIMAQ <$email>';
         
-        //     $enviaremail = mail($destino, $assunto, $arq, $headers);
+            $enviaremail = mail($destino, $assunto, $arq, $headers);
         
-        //     if($enviaremail){
-        //         echo "foi";
-        //     }else{
-        //         echo "deu erro ao enviar";
-        //     }
-        // }
+            if($enviaremail){
+                echo "foi";
+            }else{
+                echo "deu erro ao enviar";
+            }
+        }
     }
 ?>
 

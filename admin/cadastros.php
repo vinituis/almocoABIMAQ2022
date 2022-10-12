@@ -2,7 +2,7 @@
 
 include '../config.php';
 
-$select = "SELECT * FROM cadastros ORDER BY cadastros.id ASC";
+$select = "SELECT * FROM cadastros ORDER BY cadastros.status_pag DESC";
 $result = mysqli_query($conn, $select);
 
 if($result){
@@ -38,7 +38,6 @@ if($result){
             <td>Nome</td>
             <td>E-mail</td>
             <td>Empresa</td>
-            <td>Telefone</td>
             <td>Cadeiras</td>
             <td>Pagamento</td>
             <td>Metodo de pagamento</td>
@@ -70,15 +69,14 @@ if($result){
         $mesa = $row[1];
         $num = $row[2];
 
-        if($status_pag[$i] == 'cancelado'){}else{
+        if($status_pag[$i] == 'pendente'){
     ?>
     
-        <tr>
+        <tr class="yellow">
             <td><?php echo $mesa . $num; ?></td>
             <td><?php echo $nome[$i]; ?></td>
             <td><?php echo $email[$i]; ?></td>
             <td><?php echo $empresa[$i]; ?></td>
-            <td><?php echo $telefone[$i]; ?></td>
             <td><?php echo $quant_participante[$i]; ?></td>
             <td><?php echo $status_pag[$i]; ?></td>
             <td><?php echo $method_pag[$i]; ?></td>
@@ -86,7 +84,37 @@ if($result){
             <td><a href="./listar_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>">Ver</a></td>
         </tr>
         <?php
-    }}
+    }if($status_pag[$i] == 'cancelado'){
+        ?>
+        <tr class="red">
+            <td><?php echo $mesa . $num; ?></td>
+            <td><?php echo $nome[$i]; ?></td>
+            <td><?php echo $email[$i]; ?></td>
+            <td><?php echo $empresa[$i]; ?></td>
+            <td><?php echo $quant_participante[$i]; ?></td>
+            <td><?php echo $status_pag[$i]; ?></td>
+            <td><?php echo $method_pag[$i]; ?></td>
+            <td><a href="./add_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>&num=<?php echo $quant_participante[$i]; ?>">Adicionar</a></td>
+            <td><a href="./listar_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>">Ver</a></td>
+        </tr>
+        <?php
+    }if($status_pag[$i] == 'pago'){
+    ?>
+    <tr class="green">
+        <td><?php echo $mesa . $num; ?></td>
+        <td><?php echo $nome[$i]; ?></td>
+        <td><?php echo $email[$i]; ?></td>
+        <td><?php echo $empresa[$i]; ?></td>
+        <td><?php echo $quant_participante[$i]; ?></td>
+        <td><?php echo $status_pag[$i]; ?></td>
+        <td><?php echo $method_pag[$i]; ?></td>
+        <td><a href="./add_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>&num=<?php echo $quant_participante[$i]; ?>">Adicionar</a></td>
+        <td><a href="./listar_pessoas?id_cad=<?php echo $id[$i]; ?>&mesa=<?php echo $mesa . $num; ?>">Ver</a></td>
+    </tr>
+    <?php
+}
+
+}
 }
 ?>
     </table>

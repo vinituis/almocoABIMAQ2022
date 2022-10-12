@@ -18,6 +18,7 @@ $result = mysqli_query($conn, $select);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/global.css">
+    <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
     <h2>Dados do Comprador</h2>
@@ -40,25 +41,31 @@ $result = mysqli_query($conn, $select);
                     $obsPag = $data['observacoes_pag'];
             ?>
            
-                <p>Identificador: <?php echo $ref_cad; ?></p>
-                <p>Mesa: <?php echo $mesa; ?></p>
-                <p>Nome: <?php echo $name; ?></p>
-                <p>Empresa: <?php echo $business; ?></p>
-                <p>Telefone: <?php echo $tel; ?></p>
-                <p>E-mail: <?php echo $e_mail; ?></p>
-                <p>CPF ou CNPJ: <?php echo $cnpj; ?></p>
-                <p>Endereço: <?php echo $end; ?></p>
-                <p>Lugares: <?php echo $quant; ?></p>
-                <p>Pagamento: <?php echo $pag; ?></p>
-                <p>Método de Pagamento: <?php echo $metPag; ?></p>
-                <p>Observações: <?php echo $obsPag; ?></p>
+                <p><b>Identificador:</b> <?php echo $ref_cad; ?></p>
+                <p><b>Mesa:</b> <?php echo $mesa; ?></p>
+                <p><b>Nome:</b> <?php echo $name; ?></p>
+                <p><b>Empresa:</b> <?php echo $business; ?></p>
+                <p><b>Telefone:</b> <?php echo $tel; ?></p>
+                <p><b>E-mail:</b> <?php echo $e_mail; ?></p>
+                <p><b>CPF ou CNPJ:</b> <?php echo $cnpj; ?></p>
+                <p><b>Endereço:</b> <?php echo $end; ?></p>
+                <p><b>Lugares:</b> <?php echo $quant; ?></p>
+                <p><b>Pagamento:</b> <?php echo $pag; ?></p>
+                <p><b>Método de Pagamento:</b> <?php echo $metPag; ?></p>
+                <p><b>Observações:</b> <?php echo $obsPag; ?></p>
             <?php 
                 }
                 
             }
             ?>
         <br><br>
-        <a href="./cadastros">Voltar</a>
+        <div class="acao">
+            <div class="btns">
+                <a href="./mod/pag?status=pago&id=<?php echo $ref_cad; ?>" class="btn azul">Pagamento efetuado</a>
+                <a href="./mod/pag?status=cancelado&id=<?php echo $ref_cad; ?>" class="btn vermelho">Cancelar</a>
+                <a href="./cadastros" class="btn voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
+            </div>
+        </div>
     </div>
     <div class="table">
         <h2>Dados dos Participantes</h2>

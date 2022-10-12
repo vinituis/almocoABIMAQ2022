@@ -10,6 +10,10 @@
     --mesa-livre: green;
     --mesa-block: #696969;
     --mesa-parcial: var(--cor-2);
+
+    --vermelho: #da2a2a;
+    --verde: #287233;
+    --amarelo: #ffe135;
 }
 
 * {
@@ -83,6 +87,7 @@ body {
     border: none;
     border-radius: 8px;
     transition: none;
+    text-align: center;
 }
 
 .btn:hover {
@@ -190,6 +195,32 @@ body {
     background-color: var(--cor-3);
 }
 
+.table table tr.red {
+    background-color: var(--vermelho);
+    color: var(--cor-3);
+}
+
+.table table tr.green {
+    background-color: var(--verde);
+    color: var(--cor-3);
+}
+
+.table table tr.yellow {
+    background-color: var(--amarelo);
+    color: var(--cor-1);
+}
+
+.table table tr.red td a,
+.table table tr.green td a {
+    color: var(--cor-3);
+    text-decoration: underline;
+}
+
+.table table tr.yellow td a {
+    color: var(--cor-1);
+    text-decoration: underline;
+}
+
 .table table tr td {
     padding: 0.5rem 1rem;
 }
@@ -207,4 +238,27 @@ body {
     width: 30%;
     color: var(--cor-3);
     margin: 0.2rem 1rem;
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+
+.btn.azul {
+    background-color: var(--cor-2);
+}
+
+.btn.vermelho {
+    background-color: var(--vermelho);
+}
+
+.btn.voltar {
+    background-color: var(--cor-3);
+    margin: 1rem;
+    padding: 1rem 2rem;
+    color: var(--cor-1);
 }

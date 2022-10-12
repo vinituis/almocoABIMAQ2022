@@ -1,8 +1,7 @@
 <?php
 
 // Email de envio do cadastro para o nelson
-
-$arq = 
+$Enotifica = 
 '
             <!DOCTYPE html>
             <html lang="pt-br">
@@ -43,6 +42,62 @@ $arq =
             </body>
             </html>
 ';
-;
+
+$Epag =
+'
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <title>E-mail</title>
+                <style type="text/css">
+                    body {
+                    margin:0;
+                    font-family: Verdana, sans-serif;
+                    font-size: 12px;
+                    color: #000;
+                    }
+                    p {
+                    font-size: 12px;
+                    }
+                </style>
+
+            </head>
+            <body>
+                <div>
+                    <h1>Inscrição realizada</h1>
+                </div>
+            </body>
+            </html>
+';
+
+
+$Ecancel =
+'
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <title>E-mail</title>
+                <style type="text/css">
+                    body {
+                    margin:0;
+                    font-family: Verdana, sans-serif;
+                    font-size: 12px;
+                    color: #000;
+                    }
+                    p {
+                    font-size: 12px;
+                    }
+                </style>
+
+            </head>
+            <body>
+                <div>
+                    <h1>Cancelamento realizado</h1>
+                </div>
+            </body>
+            </html>
+';
 
 ?>
