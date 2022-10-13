@@ -2,8 +2,10 @@
 
 include '../config.php';
 
+session_start();
 
 if(isset($_GET['id_cad'])){
+
     $ref_cad = $_GET['id_cad'];
     if(isset($_GET['mesa'])){
         $mesa = $_GET['mesa'];
@@ -72,10 +74,16 @@ if(isset($_POST['user'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adicionar na Mesa <?php echo $mesa; ?> | Almoço de Confraternização 2022</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/global.css">
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
+    <!-- JavaScript -->
     <script src="../js/form.js"></script>
+    <!-- Bloquear indexação -->
+    <meta name="robots" content="noindex">
+    
 </head>
 <body>
 
