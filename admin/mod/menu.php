@@ -1,6 +1,15 @@
 <?php
 
 ?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXYCN6EK5G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VXYCN6EK5G');
+    </script>
 
 <div class="header adm">
     <div class="nav">

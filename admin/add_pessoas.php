@@ -80,7 +80,7 @@ if(isset($_POST['user'])){
 <body>
 
 <?php
-    // include './mod/menu.php';
+    include './mod/menu.php';
 ?>
 
     <div class="container">

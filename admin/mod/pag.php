@@ -114,7 +114,7 @@ if(isset($_GET['status'])){
                 }
             }
         }
-        // header('location: ../cadastros');
+        header('location: ../cadastros');
     }
   
 }

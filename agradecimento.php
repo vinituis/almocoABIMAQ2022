@@ -12,6 +12,15 @@
     <link rel="apple-touch-icon" href="./img/favicon.png">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/global.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXYCN6EK5G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VXYCN6EK5G');
+    </script>
 </head>
 <body>
 

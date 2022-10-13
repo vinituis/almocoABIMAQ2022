@@ -18,6 +18,16 @@
     <link rel="stylesheet" href="./css/lp.css">
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXYCN6EK5G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VXYCN6EK5G');
+    </script>
+
 </head>
 <body id="topo">
     <div class="header">
