@@ -93,7 +93,7 @@
             </html>';
             $emailenviar = 'eventos@abimaq.org.br';
             $destino = 'eventos@abimaq.org.br';
-            $assunto = 'Confirmação de Mesa | Almoço 2022 ';
+            $assunto = 'Confirmação de Mesa '.$secao.$mesa.' | Almoço 2022 ';
         
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
@@ -101,11 +101,42 @@
         
             $enviaremail = mail($destino, $assunto, $arq, $headers);
         
-            if($enviaremail){
-                echo "foi";
-            }else{
-                echo "deu erro ao enviar";
-            }
+            // Email para o cliente
+            $arq2 = '
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8">
+                <title>E-mail</title>
+                <style type="text/css">
+                    body {
+                    margin:0;
+                    font-family: Verdana, sans-serif;
+                    font-size: 12px;
+                    color: #000;
+                    }
+                    p {
+                    font-size: 12px;
+                    }
+                </style>
+
+            </head>
+            <body>
+                <div>
+                    <h1>resposta para o cliente</h1>
+                </div>
+            </body>
+            </html>';
+            $emailenviar = 'eventos@abimaq.org.br';
+            $destino = $email;
+            $assunto = 'Reserva realizada';
+        
+            $headers = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= 'From: Eventos ABIMAQ <$email>';
+        
+            $enviaremail = mail($destino, $assunto, $arq2, $headers);
+            header('location: ./agradecimento?method='. $pag .'');
         }
     }
 ?>
@@ -116,9 +147,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastro | Almoço de Confraternização 2022</title>
+    <!-- Criador da página -->
+    <meta name="author" content="@vinituis">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/lp.css">
+    <!-- JavaScript -->
     <script src="./js/form.js"></script>
 </head>
 <body>

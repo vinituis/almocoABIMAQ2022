@@ -1,16 +1,22 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Almoço</title>
+    <!-- Título da página -->
+    <title>Almoço de Confraternização 2022</title>
+    <!-- Descrição da página -->
+    <meta name="description" content="Todos os anos a ABIMAQ realiza uma confraternização para seus associados, Mais do que refletir sobre os desafios do ano que passou, a intenção é renovar as expectativas do setor para o próximo ano.">
+    <!-- Criador da página -->
+    <meta name="author" content="@vinituis">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/lp.css">
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
 </head>
 <body id="topo">
@@ -25,7 +31,7 @@
     <!-- Seção de introdução e informações -->
     <div class="container">
         <h1>Almoço De Confraternização 2019</h1>
-        <small>ABIMAQ |SINDIMAQ</small>
+        <small>ABIMAQ | SINDIMAQ</small>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nihil odio et? Perferendis vero voluptas exercitationem ut pariatur eligendi culpa.
         </p>
         <div class="container dados">
@@ -127,7 +133,7 @@
     
     <!-- Voltar para o topo -->
 
-    <div class="topo" id="btn_top">
+    <div class="top" id="btn_top">
         <a href="#topo"><i class="fas fa-arrow-up"></i></a>
     </div>
 

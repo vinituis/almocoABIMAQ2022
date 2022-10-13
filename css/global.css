@@ -37,6 +37,11 @@ h2 {
     padding-bottom: 1rem;
 }
 
+s {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
 body {
     width: 100%;
     display: flex;
@@ -48,13 +53,12 @@ body {
 }
 
 .header {
-    display: flex;
     width: 100%;
     top: 0;
     height: 250px;
     background-image: var(--image);
-    background-position: cover;
-    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: repeat-x;
 }
 
 .header .nav {
@@ -85,6 +89,10 @@ body {
     background-color: var(--cor-3);
     color: var(--cor-1);
     padding: 3rem 4rem;
+}
+
+p.branco {
+    color: var(--cor-3);
 }
 
 .btn {
@@ -160,7 +168,7 @@ body {
     display: none;
 }
 
-.topo {
+.top {
     display: none;
     z-index: 99;
     position: fixed;
@@ -169,7 +177,7 @@ body {
     cursor: pointer;
 }
 
-.topo i {
+.top i {
     font-size: 1.5rem;
     background-color: var(--cor-3);
     color: var(--cor-1);
