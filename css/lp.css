@@ -9,12 +9,14 @@
 
 .container p {
     color: var(--cor-3);
-    margin: 0 1rem;
+    width: 100%;
 }
 
 .container.dados{
     flex-direction: row;
     align-items: flex-start;
+    width: 100%;
+    padding-bottom: 0;
 }
 
 .dado {
@@ -23,10 +25,14 @@
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
-    width: 33.33%;
+    width: 27%;
     vertical-align: top;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 1rem 0rem;
+    margin: 0rem 1rem;
+}
+
+.dado p {
+    margin: 0 1rem 0 0;
 }
 
 .dado .icon {
@@ -54,6 +60,105 @@
 
 .container.branco h2 {
     color: var(--cor-1);
+}
+
+.legenda {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.legenda h2 {
+    padding-top: 1rem;
+}
+
+.legenda .mapa {
+    width: 100%;
+    max-width: 800px;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 2rem;
+}
+
+.legenda .mapa .legs {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.legenda .mapa .legs .leg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.legenda .mapa .legs .leg a {
+    text-align: left;
+}
+
+.legenda .mapa .legs .leg p {
+    width: 100%;
+    color: var(--cor-1);
+    padding: 0; margin: 0;
+}
+
+.container.branco.footer {
+    text-align: center;
+    margin: 0; padding: 1rem 0 0 0;
+}
+
+
+@media (max-width: 800px){
+    
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .container.dados {
+        padding: 0;
+    }
+
+    .container .dado {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .mapa {
+        width: 120%;
+        padding: 0.5rem;
+        gap: 15px 0;
+    }
+
+    .item {
+        width: 7%;
+        margin: 2.5%;
+    }
+
+    .topo {
+        padding: 1rem;
+        cursor: pointer;
+    }
+    
+    .topo i {
+        padding: 2rem 1rem;
+        border-radius: 50px;
+    }
+
+    
 }
 
 /*--------------------------------------------------------------------------------------------*/

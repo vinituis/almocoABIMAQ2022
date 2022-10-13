@@ -13,13 +13,12 @@
     <link rel="stylesheet" href="./css/lp.css">
     <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
 </head>
-<body>
+<body id="topo">
     <div class="header">
         <div class="nav">
-            <img src="./img/logo.png" alt="">
-            <a href="" class="item_nav">Opção 1</a>
-            <a href="" class="item_nav">Opção 2</a>
-            <a href="" class="item_nav">Opção 3</a>
+            <a href="./"><img src="./img/favicon.png" alt=""></a>
+            <a href="#mapa" class="item_nav">Mapa das mesas</a>
+            <a href="#contato" class="item_nav">Contato</a>
         </div>
     </div>
 
@@ -63,15 +62,40 @@
         <br>
         Estamos presentes em todo Brasil.</p>
         <a href="" class="btn">Acesse o Mídia Kit</a>
+        <div id="mapa"></div>
     </div>
 
     <!-- Seção do mapa -->
-    <div class="container" id="mapa">
+    <div class="container">
         <h2>Mapa das mesas</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut et perspiciatis perferendis esse, ea magni tempora impedit, provident modi culpa officia ducimus sunt ab natus doloribus animi cum omnis tempore quam velit. Cumque qui veniam, accusamus eum amet rem fuga non nam ea nisi minus architecto dignissimos incidunt natus.</p>
+
+        <div class="legenda">
+            <h2>Legenda</h2>
+            <div class="mapa">
+                <div class="legs">
+                    <div class="leg">
+                        <a href="" class="parcial">C2</a>
+                        <p>Mesa para compra individual | <b>R$ 180,00 cada lugar</b></p>
+                    </div>
+                    <div class="leg">
+                        <a href="" class="livre">C2</a>
+                        <p>Mesa para compra completa (10 Lugares) | <b>R$ 1.700,00 (R$ 100,00 de desconto)</b></p>
+                    </div>
+                    <div class="leg">
+                        <a href="" class="block">C2</a>
+                        <p>Mesa Bloqueada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, tempore error atque molestiae quis ab, eveniet ullam quisquam magni est, nisi incidunt veniam in porro accusantium distinctio molestias maiores sequi.</p>
+
         <div class="mapa">
             <?php include('./mod/mapa.php'); ?>
         </div>
+        <div id="contato"></div>
     </div>
 
     <!-- Seção de contato -->
@@ -101,12 +125,20 @@
         </div>
     </div>
     
+    <!-- Voltar para o topo -->
+
+    <div class="topo" id="btn_top">
+        <a href="#topo"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
     <!-- Seção de footer -->
 
     <div class="container branco footer">
         <p>ABIMAQ 2022 &copy; Todos os direitos reservados</p>
-        <small>Desenvolvido por <a href="https://www.linkedin.com/in/vinicius-fernandes-andrade/">@vinituis</a></small>
+        <small>Desenvolvido por <a href="https://www.linkedin.com/in/vinicius-fernandes-andrade/">Vinicius Fernandes</a></small>
     </div>
+
+    <script src="./js/back_to_top.js"></script>
 
 </body>
 </html>
