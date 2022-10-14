@@ -50,7 +50,7 @@
                     <i class="far fa-calendar"></i>
                     <span>Data</span>
                 </div>
-                <p>O Almoço vai acontecer no dia 09 de Dezembro de 2022.</p>
+                <p>O Almoço vai acontecer no dia 05 de Dezembro de 2022.</p>
             </div>
             <div class="dado">
                 <div class="icon">
@@ -74,9 +74,7 @@
     <div class="container branco">
         <h2>Quer patrocinar este evento?</h2>
         <small>Solicitações até 15 de Novembro</small>
-        <p>A ABIMAQ possui um público altamente qualificado entre os setores da indústria de máquinas e equipamentos na América Latina, alta audiência e os melhores canais.
-        <br>
-        Estamos presentes em todo Brasil.</p>
+        <p>A ABIMAQ possui um público altamente qualificado entre os setores da indústria de máquinas e equipamentos na América Latina, alta audiência e os melhores canais. Estamos presentes em todo Brasil.</p>
         <a href="" class="btn">Acesse o Mídia Kit</a>
         <div id="mapa"></div>
     </div>
@@ -117,9 +115,9 @@
     <!-- Seção de contato -->
     <div class="container branco">
         <h2>Contato</h2>
-        <p>Para obter mais informações sobre o Almoço de Confraternização ABIMAQ 2019, condições para compra de convites, como patrocinar o evento, dentre outras informações, entre em contato com através dos canais abaixo:</p>
-        <p>E-mail:<a href="">E-mail</a></p>
-        <p>Telefone: +55 11 5582-0000</p>
+        <p>Para obter mais informações sobre o Almoço de Confraternização ABIMAQ 2022, condições para compra de convites, como patrocinar o evento, dentre outras informações, entre em contato com através dos canais abaixo:</p>
+        <p>E-mail:<a href="mailto:eventos@abimaq.org.br"> eventos@abimaq.org.br</a></p>
+        <p>Telefone: +55 (11) 5582-0000</p>
     </div>
 
     <!-- Seção de patrocinadores -->

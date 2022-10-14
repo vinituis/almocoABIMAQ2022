@@ -47,7 +47,8 @@ if(isset($_GET['status'])){
                 <body>
                     <div>
                         <h1>Inscrição realizada</h1>
-                        <a href="http://localhost/almocoABIMAQ2022/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'">Link</a>
+                        <a href="http://almoco.abimaq.org.br/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'">Link para adicionar participantes</a>
+                        <small>Caso o link não funcione, copie e cole a url abaixo:<br>http://almoco.abimaq.org.br/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'</small>
                     </div>
                 </body>
                 </html>';

@@ -95,6 +95,7 @@ if(isset($_POST['user'])){
 ?>
 
     <div class="container">
+        <span class="aviso"><b>Pedimos que adicione os participantes do 1º Convidado em diante</b></span>
         <?php
             // se o número de linhas no banco for menor que o número de cadastros
             if(mysqli_num_rows($result) < $cad_num){
