@@ -37,6 +37,9 @@ if(isset($_SESSION['logado'])){
     </script>
     <!-- Bloquear indexação -->
     <meta name="robots" content="noindex">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/favicon.png">
 </head>
 <body>
     <div class="container">

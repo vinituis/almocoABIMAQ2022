@@ -21,6 +21,9 @@ $result = mysqli_query($conn, $select);
     <title>Gerenciamento de mesas | Almoço de Confraternização 2022</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/global.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/favicon.png">
 </head>
 <body>
 

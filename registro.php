@@ -36,14 +36,15 @@
         $mesa = $mesa;
         $type = $_POST['type'];
         
-        $nome = $_POST['nome'];
-        $cpf = $_POST['cpf'];
-        $email = $_POST['email'];
-        $empresa = $_POST['empresa'];
-        $endereco = $_POST['endereco'];
-        $tel = $_POST['tel'];
-        $obs = $_POST['obs'];
-        $pag = $_POST['pag'];
+        // Utilizei o item "htmlspecialchars($_POST['nome'], ENT_QUOTES)" para sanitizar a string
+        $nome = htmlspecialchars($_POST['nome'], ENT_QUOTES);
+        $cpf = htmlspecialchars($_POST['cpf'], ENT_QUOTES);
+        $email = htmlspecialchars($_POST['email'], ENT_QUOTES);
+        $empresa = htmlspecialchars($_POST['empresa'], ENT_QUOTES);
+        $endereco = htmlspecialchars($_POST['endereco'], ENT_QUOTES);
+        $tel = htmlspecialchars($_POST['tel'], ENT_QUOTES);
+        $obs = htmlspecialchars($_POST['obs'], ENT_QUOTES);
+        $pag = htmlspecialchars($_POST['pag'], ENT_QUOTES);
 
         $insert = "INSERT INTO cadastros(ref_mesa, nome, email, empresa, cpf_cnpj, endereco, telefone, quant_participante, observacoes_pag, method_pag) VALUES ('$id_mesa', '$nome', '$email', '$empresa', '$cpf', '$endereco', '$tel', '$quant', '$obs', '$pag')";
         mysqli_query($conn, $insert);

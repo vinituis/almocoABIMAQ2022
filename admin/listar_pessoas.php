@@ -27,6 +27,9 @@ $result = mysqli_query($conn, $select);
     <link rel="stylesheet" href="../css/global.css">
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/77f6bd1ed5.js" crossorigin="anonymous" defer></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/favicon.png">
 </head>
 <body>
 
