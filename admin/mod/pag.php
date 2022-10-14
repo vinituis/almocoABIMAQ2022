@@ -9,6 +9,7 @@ $sql = "SELECT * FROM cadastros WHERE id = '$id'";
 $res = mysqli_query($conn, $sql);
 if(mysqli_num_rows($res) >= 1){
     while ($data = mysqli_fetch_assoc($res)){
+        $nome = $data['nome'];
         $email = $data['email'];
         $ref_cad = $data['id'];
         $quant = $data['quant_participante'];
@@ -42,19 +43,27 @@ if(isset($_GET['status'])){
                         font-size: 12px;
                         }
                     </style>
-    
+
                 </head>
                 <body>
                     <div>
-                        <h1>Inscrição realizada</h1>
-                        <a href="http://almoco.abimaq.org.br/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'">Link para adicionar participantes</a>
+                        <p>Olá '.$nome.',</p>
+                        <p>O pagamento do(s) convite(s) para o Almoço de Confraternização ABIMAQ foi aprovado em nosso sistema.</p>
+                        <p>Disponibilizamos abaixo o link para cadastro dos participantes na mesa. Você terá até o dia 25/11/2022 para inserir os dados dos convidados.</p>
+                        <p>Caso esta data já tenha passado, entre em contato com o Nelson através do telefone (11) 5582-6315 ou e-mail <a href="mailto:eventos@abimaq.org.br">eventos@abimaq.org.br</a>.</p>
+                        <a href="http://almoco.abimaq.org.br/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'">Adicione os participantes</a>
+                        <br><br>
                         <small>Caso o link não funcione, copie e cole a url abaixo:<br>http://almoco.abimaq.org.br/admin/add_pessoas?id_cad='.$ref_cad.'&num='.$quant.'</small>
+                        <br><br>
+                        <p>Atenciosamente,</p>
+                        <p><b>Eventos ABIMAQ</b></p>
+                        <p>Enviado em '.$data_envio.' às '.$hora_envio.' </p>
                     </div>
                 </body>
                 </html>';
                 $emailenviar = 'eventos@abimaq.org.br';
                 $destino = $email;
-                $assunto = 'Pagamento realizado';
+                $assunto = 'Identificamos seu pagamento | Almoço de Confraternização ABIMAQ';
             
                 $headers = 'MIME-Version: 1.0' . "\r\n";
                 $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
@@ -88,17 +97,24 @@ if(isset($_GET['status'])){
                         font-size: 12px;
                         }
                     </style>
-    
+
                 </head>
                 <body>
                     <div>
-                        <h1>Cancelamento realizado</h1>
+                        <p>Olá '.$nome.',</p>
+                        <p>Não identificamos o pagamento do Almoço de Confraternização ABIMAQ</p>
+                        <p>Por este motivo estamos cancelando a sua reserva.</p>
+                        <p>Em caso de dúvida, entre em contato com o Nelson através do e-mail <a href="mailto:eventos@abimaq.org.br">eventos@abimaq.org.br</a> ou telefone (11) 5582-6315.</p>
+                        <br>
+                        <p>Atenciosamente,</p>
+                        <p><b>Eventos ABIMAQ</b></p>
+                        <p>Enviado em '.$data_envio.' às '.$hora_envio.' </p>
                     </div>
                 </body>
                 </html>';
                 $emailenviar = 'eventos@abimaq.org.br';
                 $destino = $email;
-                $assunto = 'Inscrição cancelada';
+                $assunto = 'Reserva Cancelada | Almoço de Confraternização ABIMAQ';
 
                 echo $assunto;
             

@@ -154,5 +154,9 @@
         border-radius: 50px;
     }
 
+    .header .nav .item_nav.btn {
+        width: fit-content;
+    }
+
     
 }

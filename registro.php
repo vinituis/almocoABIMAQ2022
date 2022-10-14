@@ -124,13 +124,22 @@
             </head>
             <body>
                 <div>
-                    <h1>resposta para o cliente</h1>
+                    <p>Olá '.$nome.',</p>
+                    <p>Agradecemos seu interesse em participar do Almoço de Confraternização da ABIMAQ.</p>
+                    <p>A reserva do(s) '.$quant.' convite(s) foi realizada.</p>
+                    <p>Envie para o e-mail eventos@abimaq.org.br o comprovante de pagamento para que a reserva seja efetuada.</p>
+                    <p>Caso tenha selecionado as formas de pagamento boleto ou cartão, em breve um de nossos analistas entrarão em contato.</p>
+                    <p>Em caso de dúvida, entre em contato com o Nelson através do e-mail <a href="mailto:eventos@abimaq.org.br">eventos@abimaq.org.br</a> ou telefone (11) 5582-6315.</p>
+                    <br>
+                    <p>Atenciosamente,</p>
+                    <p><b>Eventos ABIMAQ</b></p>
+                    <p>Enviado em '.$data_envio.' às '.$hora_envio.' </p>
                 </div>
             </body>
             </html>';
             $emailenviar = 'eventos@abimaq.org.br';
             $destino = $email;
-            $assunto = 'Reserva realizada';
+            $assunto = 'Reserva realizada | Almoço de Confraternização ABIMAQ';
         
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";

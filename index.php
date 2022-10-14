@@ -33,24 +33,23 @@
     <div class="header">
         <div class="nav">
             <a href="./"><img src="./img/favicon.png" alt=""></a>
-            <a href="#mapa" class="item_nav">Mapa das mesas</a>
             <a href="#contato" class="item_nav">Contato</a>
+            <a href="#mapa" class="item_nav btn">Compra de Convite</a>
         </div>
     </div>
 
     <!-- Seção de introdução e informações -->
     <div class="container">
-        <h1>Almoço De Confraternização 2019</h1>
+        <h1>Almoço De Confraternização 2022</h1>
         <small>ABIMAQ | SINDIMAQ</small>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nihil odio et? Perferendis vero voluptas exercitationem ut pariatur eligendi culpa.
-        </p>
+        <p>Todos os anos a ABIMAQ realiza uma confraternização para seus associados. Será uma ocasião para celebrar as realizações de 2022 e estreitar os laços entre as empresas do <b>setor de Máquinas e Equipamentos</b>.</p>
         <div class="container dados">
             <div class="dado">
                 <div class="icon">
                     <i class="far fa-calendar"></i>
                     <span>Data</span>
                 </div>
-                <p>O Almoço vai acontecer no dia 05 de Dezembro de 2022.</p>
+                <p>05 de Dezembro de 2022 às 12h</p>
             </div>
             <div class="dado">
                 <div class="icon">
@@ -64,7 +63,7 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <span>local</span>
                 </div>
-                <p><b>Buffet Torres</b><br>Av. dos Imarés, 182.</p>
+                <p><b>Villaggio JK</b><br>Rua Funchal, 500 - Vila Olímpia</p>
             </div>
         </div>
     </div>
@@ -73,7 +72,7 @@
 
     <div class="container branco">
         <h2>Quer patrocinar este evento?</h2>
-        <small>Solicitações até 15 de Novembro</small>
+        <small>Solicitações até 31 de outubro</small>
         <p>A ABIMAQ possui um público altamente qualificado entre os setores da indústria de máquinas e equipamentos na América Latina, alta audiência e os melhores canais. Estamos presentes em todo Brasil.</p>
         <a href="" class="btn">Acesse o Mídia Kit</a>
         <div id="mapa"></div>
@@ -81,8 +80,8 @@
 
     <!-- Seção do mapa -->
     <div class="container">
-        <h2>Mapa das mesas</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ut et perspiciatis perferendis esse, ea magni tempora impedit, provident modi culpa officia ducimus sunt ab natus doloribus animi cum omnis tempore quam velit. Cumque qui veniam, accusamus eum amet rem fuga non nam ea nisi minus architecto dignissimos incidunt natus.</p>
+        <h2>Compre seu convite</h2>
+        <p>Desenvolvemos um sistema para a reserva de mesas e convites para o Almoço de Confraternização ABIMAQ 2022, abaixo você pode selecionar a mesa desejada para compra do convite.</p>
 
         <div class="legenda">
             <h2>Legenda</h2>
@@ -104,7 +103,7 @@
             </div>
         </div>
 
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, tempore error atque molestiae quis ab, eveniet ullam quisquam magni est, nisi incidunt veniam in porro accusantium distinctio molestias maiores sequi.</p>
+        <p>O mapa abaixo foi desenvolvido com base na planta do <b>Villaggio JK</b>. Em caso de dúvidas, entre em contato através do e-mail eventos@abimaq.org.br</a></p>
 
         <div class="mapa">
             <?php include('./mod/mapa.php'); ?>
@@ -117,7 +116,10 @@
         <h2>Contato</h2>
         <p>Para obter mais informações sobre o Almoço de Confraternização ABIMAQ 2022, condições para compra de convites, como patrocinar o evento, dentre outras informações, entre em contato com através dos canais abaixo:</p>
         <p>E-mail:<a href="mailto:eventos@abimaq.org.br"> eventos@abimaq.org.br</a></p>
-        <p>Telefone: +55 (11) 5582-0000</p>
+        <p>Telefone: +55 (11) 5582-6315</p>
+        <div class="mapG">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2586361586623!2d-46.69281588447512!3d-23.595055568723797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5738720e6e1b%3A0x9609f4df28755c3a!2sVillaggio%20JK%20Eventos!5e0!3m2!1spt-BR!2sbr!4v1665774477567!5m2!1spt-BR!2sbr" width="99%" height="99%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 
     <!-- Seção de patrocinadores -->
