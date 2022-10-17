@@ -35,7 +35,7 @@ if($method == 'pix'){
     <h2>Pagamento via <?php echo $method ?></h2>
     <span class="aviso">Após realizar o pagamento, envie o comprovante para <s>eventos@abimaq.org.br</s>, para realizarmos as liberações necessárias para o evento.</span>
     <br><br>
-    <h2>Chave Pix: XX.XXX.XXXXX-XX</h2>
+    <h2>Chave Pix: 46.390.209/0001-00</h2>
 </div>
 
 <?php

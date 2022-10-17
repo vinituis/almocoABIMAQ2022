@@ -244,7 +244,7 @@
             <option value="cartao">Cartão</option>
             <option value="boleto">Boleto</option>
         </select>
-        <textarea id="observacoes" name="obs" rows="2" placeholder="Observações de pagamento" required></textarea>
+        <textarea id="observacoes" name="obs" rows="2" placeholder="Observações de pagamento"></textarea>
 
         <!-- Se for necessário exibir um alerta antes de enviar o formulário, basta inserir [onclick="alert()"] no input de submit abaixo -->
         

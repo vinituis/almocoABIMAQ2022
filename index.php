@@ -74,7 +74,7 @@
         <h2>Quer patrocinar este evento?</h2>
         <small>Solicitações até 31 de outubro</small>
         <p>A ABIMAQ possui um público altamente qualificado entre os setores da indústria de máquinas e equipamentos na América Latina, alta audiência e os melhores canais. Estamos presentes em todo Brasil.</p>
-        <a href="" class="btn">Acesse o Mídia Kit</a>
+        <a href="./arquivo/midia_kit_2022_almoco.pdf" class="btn" target="_blank">Acesse o Mídia Kit</a>
         <div id="mapa"></div>
     </div>
 
@@ -127,16 +127,10 @@
         <h2>Patrocinadores</h2>
         <div class="partners">
             <div class="partner">
-                <img src="./img/estrutura.png" alt="">
+                <img src="./img/partner/sew.png" alt="">
             </div>
             <div class="partner">
-                <img src="./img/estrutura.png" alt="">
-            </div>
-            <div class="partner">
-                <img src="./img/estrutura.png" alt="">
-            </div>
-            <div class="partner">
-                <img src="./img/estrutura.png" alt="">
+                <img src="./img/partner/baldan.png" alt="">
             </div>
         </div>
     </div>
