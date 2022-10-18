@@ -88,16 +88,16 @@
             <div class="mapa">
                 <div class="legs">
                     <div class="leg">
-                        <a href="" class="parcial">C2</a>
+                        <a class="parcial">X2</a>
                         <p>Mesa para compra individual | <b>R$ 180,00 cada lugar</b></p>
                     </div>
                     <div class="leg">
-                        <a href="" class="livre">C2</a>
+                        <a class="livre">X2</a>
                         <p>Mesa para compra completa (10 Lugares) | <b>R$ 1.700,00 (R$ 100,00 de desconto)</b></p>
                     </div>
                     <div class="leg">
-                        <a href="" class="block">C2</a>
-                        <p>Mesa Bloqueada</p>
+                        <a class="block">X2</a>
+                        <p>Mesa indisponível | Já adquirida</p>
                     </div>
                 </div>
             </div>
@@ -125,10 +125,14 @@
     <!-- Seção de patrocinadores -->
     <div class="container">
         <h2>Patrocinadores</h2>
+        <h3>Patrocínio Ouro</h3>
         <div class="partners">
             <div class="partner">
                 <img src="./img/partner/sew.png" alt="">
             </div>
+        </div>
+        <h3>Patrocínio Bronze</h3>
+        <div class="partners">
             <div class="partner">
                 <img src="./img/partner/baldan.png" alt="">
             </div>

@@ -11,6 +11,7 @@
     --mesa-livre: green;
     --mesa-block: #696969;
     --mesa-parcial: var(--cor-2);
+    --palco: var(--cor-1);
 
     --vermelho: #da2a2a;
     --verde: #287233;
@@ -149,6 +150,20 @@ p.branco {
     width: calc(100% / 10);
     float: left;
     text-align: center;
+}
+
+.item.palco {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item.palco p {
+    width: calc(100% / 3);
+    background-color: var(--palco);
+    padding: 2rem 0;
+    margin-top: 6rem;
 }
 
 .livre {

@@ -26,5 +26,10 @@ if($res=mysqli_query($conn, $select)){
             }
         }
     }
+    ?>
+    <div class="item palco">
+        <p>Palco</p>
+    </div>
+    <?php
 }
 ?>
