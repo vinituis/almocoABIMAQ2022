@@ -46,6 +46,8 @@ if($result){
     include './mod/menu.php';
 ?>
 
+<a href="./mod/download.php?table=cadastros" class="btn voltar">Baixar em excel</a>
+
 <div class="table">
     <table>
         <tr class="topo">
