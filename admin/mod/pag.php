@@ -77,58 +77,7 @@ if(isset($_GET['status'])){
                     echo "deu erro ao enviar";
                 }
             }elseif($pag == 'cancelado'){
-                date_default_timezone_set('America/Sao_Paulo');
-                $hora_envio = date('H:i:s');
-                $data_envio = date('d/m/Y');
-                $arq = '
-                <!DOCTYPE html>
-                <html lang="pt-br">
-                <head>
-                    <meta charset="UTF-8">
-                    <title>E-mail</title>
-                    <style type="text/css">
-                        body {
-                        margin:0;
-                        font-family: Verdana, sans-serif;
-                        font-size: 12px;
-                        color: #000;
-                        }
-                        p {
-                        font-size: 12px;
-                        }
-                    </style>
-
-                </head>
-                <body>
-                    <div>
-                        <p>Olá '.$nome.',</p>
-                        <p>Não identificamos o pagamento do Almoço de Confraternização ABIMAQ</p>
-                        <p>Por este motivo estamos cancelando a sua reserva.</p>
-                        <p>Em caso de dúvida, entre em contato com o Nelson através do e-mail <a href="mailto:eventos@abimaq.org.br">eventos@abimaq.org.br</a> ou telefone (11) 5582-6315.</p>
-                        <br>
-                        <p>Atenciosamente,</p>
-                        <p><b>Eventos ABIMAQ</b></p>
-                        <p>Enviado em '.$data_envio.' às '.$hora_envio.' </p>
-                    </div>
-                </body>
-                </html>';
-                $emailenviar = 'eventos@abimaq.org.br';
-                $destino = $email;
-                $assunto = 'Reserva Cancelada | Almoço de Confraternização ABIMAQ';
-
-                echo $assunto;
-            
-                $headers = 'MIME-Version: 1.0' . "\r\n";
-                $headers .= 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
-                $headers .= 'From: Eventos ABIMAQ <$email>';
-
-                $enviaremail = mail($destino, $assunto, $arq, $headers);
-            
-                if($enviaremail){
-                    echo "foi";
-                }else{
-                    echo "deu erro ao enviar";
-                }
+                
             }
         }
         header('location: ../cadastros');
