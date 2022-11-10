@@ -125,16 +125,28 @@
     <!-- Seção de patrocinadores -->
     <div class="container">
         <h2>Patrocinadores</h2>
+        <h3>Patrocínio Rubi</h3>
+        <div class="partners">
+            <div class="partner">
+                <img src="./img/partner/bradesco.png" alt="Logo do bradesco">
+            </div>
+        </div>
         <h3>Patrocínio Ouro</h3>
         <div class="partners">
             <div class="partner">
-                <img src="./img/partner/sew.png" alt="">
+                <img src="./img/partner/desenvolvesp.png" alt="Logo da Desenvolve SP">
+            </div>
+            <div class="partner">
+                <img src="./img/partner/komatsu.png" alt="Logo da Komatsu">
+            </div>
+            <div class="partner">
+                <img src="./img/partner/sew.png" alt="Logo da SEW Eurodrive Brasil">
             </div>
         </div>
         <h3>Patrocínio Bronze</h3>
         <div class="partners">
             <div class="partner">
-                <img src="./img/partner/baldan.png" alt="">
+                <img src="./img/partner/baldan.png" alt="Logo da Baldan">
             </div>
         </div>
     </div>
