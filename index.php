@@ -125,12 +125,12 @@
     <!-- Seção de patrocinadores -->
     <div class="container">
         <h2>Patrocinadores</h2>
-        <h3>Patrocínio Rubi</h3>
+        <!-- <h3>Patrocínio Rubi</h3>
         <div class="partners">
             <div class="partner">
                 <img src="./img/partner/bradesco.png" alt="Logo do bradesco">
             </div>
-        </div>
+        </div> -->
         <h3>Patrocínio Ouro</h3>
         <div class="partners">
             <div class="partner">
