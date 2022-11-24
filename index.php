@@ -107,6 +107,8 @@
 
         <div class="mapa">
             <?php include('./mod/mapa.php'); ?>
+            <!-- <h2 class="azul"><b>Todas as mesas já foram reservadas!</b></h2>
+            <h3 class="azul">Para mais informações sobre lista de espera, entre em contato através do e-mail <b>eventos@abimaq.org.br.</b></h3> -->
         </div>
         <div id="contato"></div>
     </div>
@@ -125,12 +127,12 @@
     <!-- Seção de patrocinadores -->
     <div class="container">
         <h2>Patrocinadores</h2>
-        <!-- <h3>Patrocínio Rubi</h3>
+        <h3>Patrocínio Rubi</h3>
         <div class="partners">
             <div class="partner">
                 <img src="./img/partner/bradesco.png" alt="Logo do bradesco">
             </div>
-        </div> -->
+        </div>
         <h3>Patrocínio Ouro</h3>
         <div class="partners">
             <div class="partner">
@@ -147,6 +149,9 @@
         <div class="partners">
             <div class="partner">
                 <img src="./img/partner/baldan.png" alt="Logo da Baldan">
+            </div>
+            <div class="partner">
+                <img src="./img/partner/lemasa.png" alt="Logo da Lemasa">
             </div>
         </div>
     </div>

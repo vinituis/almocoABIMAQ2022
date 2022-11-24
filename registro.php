@@ -240,8 +240,6 @@
         <input type="number" id="tel" name="tel" placeholder="telefone" required>
         <select name="pag" id="pag" required>
             <option value="">Selecione a forma de pagamento</option>
-            <option value="pix">Pix</option>
-            <option value="cartao">Cartão</option>
             <option value="boleto">Boleto</option>
         </select>
         <textarea id="observacoes" name="obs" rows="2" placeholder="Observações de pagamento"></textarea>
