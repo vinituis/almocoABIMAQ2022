@@ -106,9 +106,9 @@
         <p>O mapa abaixo foi desenvolvido com base na planta do <b>Villaggio JK</b>. Em caso de dúvidas, entre em contato através do e-mail eventos@abimaq.org.br</a></p>
 
         <div class="mapa">
-            <?php include('./mod/mapa.php'); ?>
-            <!-- <h2 class="azul"><b>Todas as mesas já foram reservadas!</b></h2>
-            <h3 class="azul">Para mais informações sobre lista de espera, entre em contato através do e-mail <b>eventos@abimaq.org.br.</b></h3> -->
+            <?php // include('./mod/mapa.php'); ?>
+            <h2 class="azul"><b>Todas as mesas já foram reservadas!</b></h2>
+            <h3 class="azul">Para mais informações sobre lista de espera, entre em contato através do e-mail <b>eventos@abimaq.org.br.</b></h3>
         </div>
         <div id="contato"></div>
     </div>
